@@ -1,0 +1,19 @@
+[project]
+name = "langgraph-lab"
+version = "0.1.0"
+description = "LangGraph 及周边技术学习实验室"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph",
+    "langchain",
+    "langchain-anthropic",
+    "langgraph-checkpoint-sqlite",
+    "python-dotenv",
+]
+
+# 后续阶段按需安装：uv sync --extra rag / --extra mcp / --extra server / --extra obs
+[project.optional-dependencies]
+rag = ["chromadb"]
+mcp = ["langchain-mcp-adapters"]
+server = ["langgraph-cli[inmem]"]
+obs = ["langsmith"]
